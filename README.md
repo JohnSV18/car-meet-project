@@ -1,0 +1,1 @@
+My name is John Saguay and this is my Car meet event project. Where you have to sign up and be logged in to create an event or add a car to an event but don't have to be logged in to see the events that are already made.
