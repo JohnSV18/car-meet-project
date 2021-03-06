@@ -16,7 +16,7 @@ class Event(db.Model):
     id= db.Column(db.Integer, primary_key=True)
     title=db.Column(db.String(100), nullable=False)
     description=db.Column(db.String(100), nullable=False)
-    date_and_time = db.Column(db.Date)
+    date = db.Column(db.Date)
     cars = db.relationship('Car', secondary='car_event_table', back_populates='car_meets_attending')
 
 car_event_table = db.Table('car_event_table', 

@@ -10,10 +10,7 @@ from car_app import bcrypt
 
 class SignUpForm(FlaskForm):
     """Sign up Form"""
-    username = StringField('Username',
-        validators=[DataRequired(), Length(min=3, max=80)])
-    name = StringField('Full Name',
-        validators=[DataRequired(), Length(min=3, max=80)])
+    username = StringField('Username', validators=[DataRequired(), Length(min=3, max=80)])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Sign Up')
 
@@ -25,10 +22,9 @@ class SignUpForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     """Login Form"""
-    username = StringField('User Name',
-        validators=[DataRequired(), Length(min=3, max=80)])
+    username = StringField('User Name', validators=[DataRequired(), Length(min=3, max=80)])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Log In')
+    submit = SubmitField('Submit')
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()

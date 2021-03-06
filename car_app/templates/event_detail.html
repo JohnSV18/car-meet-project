@@ -1,9 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% for event in car.car_meets_attending %}
+    <p>Event Title: {{ event.title }}</p>
+    <p>Event Description: {{ event.description}}</p>
+    <p>Event Date: {{ event.date}}</p>
+    <p>Cars Attending: {{ event.cars|length }}</p>
+{% endfor %}
 
-You are visiting the homepage.
+<form>
+    <fieldset>
+        <legend>Please enter your information:</legend>
 
-<!-- TODO: Display a list of users here, with each linking to their profile -->
+        {{ form.title.label }}
+        {{ form.title }}
+
+        {{ form.description.label }}
+        {{ form.description }}
+
+        {{ form.date.label }}
+        {{ form.date }}
+
+        {{ form.submit }}
+
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+
 
 {% endblock %}

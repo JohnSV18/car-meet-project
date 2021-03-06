@@ -9,18 +9,15 @@ from car_app.models import Event, Car, User
 
 class EventForm(FlaskForm):
     """Form to create a Song."""
-    title = StringField('Song Title',
-        validators=[DataRequired(), Length(min=1, max=80)])
-    date = DateField('Date Released')
-    location = QuerySelectField('Location',
-        query_factory=lambda: Location.query, allow_blank=False)
+    title = StringField('Event Title', validators=[DataRequired(), Length(min=1, max=80)])
+    date = DateField('Event Date')
+    location = StringField('Event Location', validators=[DataRequired(), Length(min=1, max=80)])
     submit = SubmitField('Submit')
 
 
 class CarForm(FlaskForm):
     """Form to create an Artist."""
-    make = StringField('Artist Name',
-        validators=[DataRequired(), Length(min=3, max=80)])
-    model = TextAreaField('Information About Artist')
-    year = IntegerAreaField
+    make = StringField('Car make', validators=[DataRequired(), Length(min=3, max=80)])
+    model = TextAreaField('Car Model', validators=[DataRequired(), Length(min=3, max=80)])
+    year = IntegerAreaField('Year Make', validators=[DataRequired(), max_length=200])
     submit = SubmitField('Submit')

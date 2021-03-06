@@ -2,8 +2,22 @@
 
 {% block content %}
 
-You are visiting the homepage.
+<h1>Add your car that's coming to the event</h1>
 
-<!-- TODO: Display a list of users here, with each linking to their profile -->
+<form>
+    <fieldset>
+        <legend>Please enter your information:</legend>
 
+        {{ form.title.label }}
+        {{ form.title }}
+        
+        {{ form.date.label }}
+        {{ form.date }}
+
+        {{ form.location.label }}
+        {{ form.location }}
+
+        {{ form.submit }}
+    </fieldset>
+</form>
 {% endblock %}
